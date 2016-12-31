@@ -33,7 +33,7 @@ public class ProcedureTest {
 
 				CallableStatement cs = con.prepareCall(EXECUTE_PROCEDURE);
 				cs.setInt(1, 18);// 设置输入参数的值
-				cs.setInt(2, 3);// 设置输入参数的值
+				cs.setInt(2, 33);// 设置输入参数的值
 				cs.registerOutParameter(3, OracleTypes.INTEGER);// 注册输出参数的类型
 				return cs;
 			}
