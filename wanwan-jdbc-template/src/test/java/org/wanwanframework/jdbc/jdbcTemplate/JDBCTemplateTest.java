@@ -14,8 +14,12 @@ public class JDBCTemplateTest {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	@Autowired
+	private JdbcTemplateDao jdbctemplatedao;
+	
 	@Test
 	public void testTemplate() {
 		System.out.println("template:" + jdbcTemplate);
+		jdbctemplatedao.query();
 	}
 }
