@@ -13,13 +13,11 @@ public class JdbcTemplateDao {
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
-	private String QUERY_ME = "select count(*) from me";
-	
 	/**
 	 * 查询数量
 	 */
-	public void query() {
-		List<Object> count = jdbcTemplate.query(QUERY_ME, new RowMapper<Object>(){
+	public void query(String querySql) {
+		List<Object> count = jdbcTemplate.query(querySql, new RowMapper<Object>(){
 
 			@Override
 			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {

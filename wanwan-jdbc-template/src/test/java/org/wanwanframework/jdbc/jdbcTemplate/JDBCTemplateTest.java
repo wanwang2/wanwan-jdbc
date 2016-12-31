@@ -17,9 +17,11 @@ public class JDBCTemplateTest {
 	@Autowired
 	private JdbcTemplateDao jdbctemplatedao;
 	
+	private String QUERY_ME = "select count(*) from me";
+
 	@Test
 	public void testTemplate() {
 		System.out.println("template:" + jdbcTemplate);
-		jdbctemplatedao.query();
+		jdbctemplatedao.query(QUERY_ME);
 	}
 }
