@@ -24,8 +24,9 @@ public class ProcedureTest {
 	private JdbcTemplate jdbcTemplate;
 
 	private String EXECUTE_PROCEDURE = "{call coco.adder(?, ?, ?)}";
+	private String EXECUTE_UPDATE_IMEI = "{call coco.UPDATE_IMEI_REPORT_TEST()}";
 
-	@Test
+	//@Test
 	public void testAdd() {
 		@SuppressWarnings({ "unchecked", "rawtypes" })
 		Integer param2Value = (Integer) jdbcTemplate.execute(new CallableStatementCreator() {
@@ -44,5 +45,11 @@ public class ProcedureTest {
 			}
 		});
 		System.out.println("param2Value:" + param2Value);
+	}
+	
+	@Test
+	public void testUpdateImei() {
+		jdbcTemplate.execute(EXECUTE_UPDATE_IMEI);
+		System.out.println("execute end.");
 	}
 }
