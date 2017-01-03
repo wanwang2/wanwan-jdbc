@@ -12,8 +12,8 @@ public class ProcedureUtils {
 		try {
 			ReportMapper spMapper = sqlSession.getMapper(ReportMapper.class);
 			UpdateEcCustIdVo vo = getUpdateEcCustIdParams(new Date(), 0);
-			String r = spMapper.updateMonthReportEcCustId(vo);
-			System.out.println("result:" + r);
+			spMapper.updateMonthReportEcCustId(vo);
+			System.out.println("count:" + vo.getSuccessCnt());
 		} catch (Exception e) {
 			System.out.println("异常：" + e);
 		} finally {
