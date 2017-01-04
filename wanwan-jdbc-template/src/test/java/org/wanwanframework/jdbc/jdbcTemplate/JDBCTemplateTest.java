@@ -3,7 +3,6 @@ package org.wanwanframework.jdbc.jdbcTemplate;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -12,16 +11,10 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class JDBCTemplateTest {
 
 	@Autowired
-	private JdbcTemplate jdbcTemplate;
-	
-	@Autowired
 	private JdbcTemplateDao jdbctemplatedao;
 	
-	private String QUERY_ME = "select count(*) from me";
-
 	@Test
 	public void testTemplate() {
-		System.out.println("template:" + jdbcTemplate);
-		jdbctemplatedao.query(QUERY_ME);
+		jdbctemplatedao.query();
 	}
 }

@@ -1,34 +1,36 @@
 package org.wanwanframework.jdbc.jdbcTemplate;
 
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.RowMapper;
 
+/**
+ * 连接用Dao
+ * @author coco
+ *
+ */
 public class JdbcTemplateDao {
 
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
+	//@Autowired
+	private String tableName;
+	
 	/**
 	 * 查询数量
 	 */
-	public void query(String querySql) {
-		List<Object> count = jdbcTemplate.query(querySql, new RowMapper<Object>(){
-
-			@Override
-			public Object mapRow(ResultSet rs, int rowNum) throws SQLException {
-				return rs.getString(1);
-			}
-		});
+	public String query() {
+		String countSql = "select count(*) from " + tableName;
+		String count = jdbcTemplate.queryForObject(countSql, null, String.class);
 		System.out.println("count:" + count);
+		return count;
 	}
 	
 	public void setJdbcTemplate(JdbcTemplate jdbcTemplate) {
 		this.jdbcTemplate = jdbcTemplate;
 	}
 
+	public void setTableName(String tableName) {
+		this.tableName = tableName;
+	}
 }
