@@ -1,6 +1,7 @@
 package org.wanwanframework.jdbc.mybatis;
 
 import java.io.Serializable;
+import java.util.Date;
 
 @SuppressWarnings("serial")
 public class IMEIFeedbackVo implements Serializable {
@@ -13,9 +14,9 @@ public class IMEIFeedbackVo implements Serializable {
 	// 未反馈原因数据
 	private int notFeedbackData;
 	// 首次反馈时间
-	private int firstFeedTime;
+	private Date firstFeedTime;
 	// 最后反馈时间
-	private int lastFeedTime;
+	private Date lastFeedTime;
 	// 未反馈原因数据占比
 	private int notFeedbackPercent;
 	
@@ -43,16 +44,16 @@ public class IMEIFeedbackVo implements Serializable {
 	public void setNotFeedbackData(int notFeedbackData) {
 		this.notFeedbackData = notFeedbackData;
 	}
-	public int getFirstFeedTime() {
+	public Date getFirstFeedTime() {
 		return firstFeedTime;
 	}
-	public void setFirstFeedTime(int firstFeedTime) {
+	public void setFirstFeedTime(Date firstFeedTime) {
 		this.firstFeedTime = firstFeedTime;
 	}
-	public int getLastFeedTime() {
+	public Date getLastFeedTime() {
 		return lastFeedTime;
 	}
-	public void setLastFeedTime(int lastFeedTime) {
+	public void setLastFeedTime(Date lastFeedTime) {
 		this.lastFeedTime = lastFeedTime;
 	}
 	public int getNotFeedbackPercent() {
