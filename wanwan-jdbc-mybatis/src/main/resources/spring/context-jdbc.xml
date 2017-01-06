@@ -41,7 +41,7 @@
 		<property name="configLocation" value="classpath:mybatis-resources.xml"></property>
 		<property name="mapperLocations">
 			<list>
-				<value>classpath:org/wanwanframework/jdbc/mybatis/dao/ReportMapper.xml</value>
+				<value>classpath:org/wanwanframework/jdbc/mybatis/dao/*Mapper.xml</value>
 			</list>
 		</property>
 	</bean>
