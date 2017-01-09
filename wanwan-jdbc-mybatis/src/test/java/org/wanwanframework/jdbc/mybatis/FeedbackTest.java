@@ -28,14 +28,14 @@ public class FeedbackTest {
 		IMEIFeedbackDao feedbackMapper = session.getMapper(IMEIFeedbackDao.class);
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("startIndex", 1);
-		map.put("endIndex", 2);
+		map.put("endIndex", 3);
 		List<IMEIFeedbackVo> list = feedbackMapper.queryCountByProvince(map);
 		System.out.println("list.size:" + list.size());
 	}
 	
 	private static final String QUERY_RULE_LIST = "org.wanwanframework.jdbc.mybatis.dao.IMEIFeedbackDao.queryCountByProvince";
 	
-	@Test
+	//@Test
 	public void testFeedback2() throws Exception {
 		SqlSessionFactory f = ((SqlSessionFactory)sqlSessionFactoryBean.getObject());
 		SqlSession session = f.openSession();
