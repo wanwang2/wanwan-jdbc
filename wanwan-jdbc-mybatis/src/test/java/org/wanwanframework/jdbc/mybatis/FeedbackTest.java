@@ -28,4 +28,13 @@ public class FeedbackTest {
 		System.out.println("map:" + list);
 	}
 	
+	private static final String QUERY_RULE_LIST = "org.wanwanframework.jdbc.mybatis.dao.IMEIFeedbackMapper.queryCountByProvince";
+	
+	@Test
+	public void testFeedback2() throws Exception {
+		SqlSessionFactory f = ((SqlSessionFactory)sqlSessionFactoryBean.getObject());
+		SqlSession session = f.openSession();
+		List<IMEIFeedbackVo> list = session.selectList(QUERY_RULE_LIST);
+		System.out.println("map:" + list);
+	}
 }
