@@ -1,6 +1,8 @@
 package org.wanwanframework.jdbc.mybatis;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -24,8 +26,11 @@ public class FeedbackTest {
 		SqlSessionFactory f = ((SqlSessionFactory)sqlSessionFactoryBean.getObject());
 		SqlSession session = f.openSession();
 		IMEIFeedbackDao feedbackMapper = session.getMapper(IMEIFeedbackDao.class);
-		List<IMEIFeedbackVo> list = feedbackMapper.queryCountByProvince();
-		System.out.println("map:" + list);
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("startIndex", 1);
+		map.put("endIndex", 2);
+		List<IMEIFeedbackVo> list = feedbackMapper.queryCountByProvince(map);
+		System.out.println("list.size:" + list.size());
 	}
 	
 	private static final String QUERY_RULE_LIST = "org.wanwanframework.jdbc.mybatis.dao.IMEIFeedbackDao.queryCountByProvince";
