@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.wanwanframework.jdbc.mybatis.IMEIFeedbackVo;
 
 @Component
-public interface IMEIFeedbackMapper {
+public interface IMEIFeedbackDao {
 	
 	public List<IMEIFeedbackVo> queryCountByProvince();
 }
