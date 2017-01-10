@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.wanwanframework.jdbc.mybatis.dao.IMEIFeedbackDao">
 
-	<!--月报表数据总数查询 -->
+	<!--用户信息反馈统计查询 -->
 	<select id="queryCountByProvince" resultType="org.wanwanframework.jdbc.mybatis.IMEIFeedbackVo"
 		parameterType="java.util.Map">
 
@@ -33,6 +33,12 @@
            WHERE startnum >= #{startIndex}
          ]]>
 
+	</select>
+	
+	<!--用户信息反馈统计查询 -->
+	<select id="queryTotal" resultType="java.lang.Long"
+		parameterType="java.util.Map">
+		 select count(1) from sa_db_province
 	</select>
 
 </mapper>
