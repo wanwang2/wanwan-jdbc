@@ -7,9 +7,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * 作者：蒋祖兵
- * 描述：
- * 时间： 2016/10/29.
+ * 时间控件
+ * @author coco
+ *
  */
 public class IDateFormat {
     public static final String FORMAT_TIME = "yyyy-MM-dd HH:mm:ss";
