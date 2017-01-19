@@ -31,6 +31,7 @@ public class FeedbackTest {
 		map.put("endIndex", 3);
 		List<IMEIFeedbackVo> list = feedbackMapper.queryCountByProvince(map);
 		System.out.println("list.size:" + list.size());
+		System.out.println("list.size:" + list);
 	}
 	
 	private static final String QUERY_RULE_LIST = "org.wanwanframework.jdbc.mybatis.dao.IMEIFeedbackDao.queryCountByProvince";
