@@ -20,10 +20,13 @@ public class DataSourceTest {
 	@Test
 	public void testSession() throws Exception {
 		System.out.println("sqlSessionFactoryBean:" + sqlSessionFactoryBean);
+	}
+
+	@Test
+	public void testProcedure() throws Exception {
 		SqlSessionFactory f = ((SqlSessionFactory)sqlSessionFactoryBean.getObject());
 		SqlSession session = f.openSession();
 		System.out.println("session:" + session);
 		ProcedureUtils.callProcedure(session);
 	}
-
 }

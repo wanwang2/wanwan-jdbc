@@ -26,6 +26,7 @@ import org.springframework.util.Assert;
  *
  * @param <T>
  */
+@SuppressWarnings("unchecked")
 public class MyBatisBaseDAO<T> extends AstractSqlSessionDaoSupport {
 
 
@@ -119,7 +120,8 @@ public class MyBatisBaseDAO<T> extends AstractSqlSessionDaoSupport {
      * @param param
      * @return
      */
-    public T get(final String key, final Object param) {
+
+	public T get(final String key, final Object param) {
 //        logger.debug("get key:{} param:{}", key, param);
         try {
             return (T) getSqlSession().selectOne(key, param);
@@ -300,7 +302,7 @@ public class MyBatisBaseDAO<T> extends AstractSqlSessionDaoSupport {
      * @param paramMap
      * @return
      */
-    public long getCount(final String key, final Map paramMap) {
+    public long getCount(final String key, final Map<?,?> paramMap) {
         try {
 //            logger.debug("getList key {},paramMap {}", key, paramMap);
             return (Long) getSqlSession().selectOne(key, paramMap);
