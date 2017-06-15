@@ -12,7 +12,7 @@ import org.wanwanframework.jdbc.mybatis.utils.ProcedureUtils;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:context.xml" })
-public class DataSourceTest {
+public class SessionTest {
 
 	@Autowired
 	private SqlSessionFactoryBean sqlSessionFactoryBean;
